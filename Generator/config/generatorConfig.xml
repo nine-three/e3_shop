@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <!--路径中不能包含中文-->
+    <classPathEntry location="G:/NJmrk/mysql-connector-java-5.1.41.jar"/>
+    <context id="mysql_table" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/e3mall" userId="root"
+            password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成实体类的包名和位置 -->
+        <javaModelGenerator targetPackage="cn.e3mall.pojo"
+            targetProject="Generator/src">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="cn.e3mall.mapper"
+            targetProject="Generator/src">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- 生成DAO方法的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+            targetPackage="cn.e3mall.mapper" targetProject="Generator/src">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        <!-- 要生成的实体和对应的来源表 -->
+        <table schema="" tableName="tb_user"></table>
+        <table schema="" tableName="tb_order_shipping"></table>
+        <table schema="" tableName="tb_order_item"></table>
+        <table schema="" tableName="tb_order"></table>
+        <table schema="" tableName="tb_item_param_item"></table>
+        <table schema="" tableName="tb_item_param"></table>
+        <table schema="" tableName="tb_item_desc"></table>
+        <table schema="" tableName="tb_item_cat"></table>
+        <table schema="" tableName="tb_item"></table>
+        <table schema="" tableName="tb_content_category"></table>
+        <table schema="" tableName="tb_content"></table>
+        <!-- <table schema="???" tableName="???"> <columnOverride column="???" 
+            property="???" /> </table> -->
+    </context>
+</generatorConfiguration>
